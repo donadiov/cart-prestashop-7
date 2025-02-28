@@ -597,7 +597,8 @@ class Mercadopago extends PaymentModule
             $standardCheckout = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
             $standardCheckout->setForm($infoTemplate)
                 ->setCallToActionText($this->l('I want to pay with Mercado Pago at no additional cost.'))
-                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png');
+                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png')
+                ->setModuleName('mercadopago');
 
             return $standardCheckout;
         }
@@ -625,7 +626,8 @@ class Mercadopago extends PaymentModule
             $customCheckout = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
             $customCheckout->setForm($infoTemplate)
                 ->setCallToActionText($this->l(' Pay with credit and debit cards') . $str_discount)
-                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png');
+                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png')
+                ->setModuleName('mercadopago');
 
             return $customCheckout;
         }
@@ -653,7 +655,8 @@ class Mercadopago extends PaymentModule
             $ticketCheckout = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
             $ticketCheckout->setForm($infoTemplate)
                 ->setCallToActionText($this->l('Pay with payment methods in cash') . $str_discount)
-                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png');
+                ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png')
+                ->setModuleName('mercadopago');
 
             return $ticketCheckout;
         }
@@ -685,7 +688,8 @@ class Mercadopago extends PaymentModule
         $pixCheckout = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
         $pixCheckout->setForm($infoTemplate)
             ->setCallToActionText($this->l('Pix') . $strDiscount)
-            ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png');
+            ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png')
+            ->setModuleName('mercadopago');
 
         return $pixCheckout;
     }
@@ -708,7 +712,8 @@ class Mercadopago extends PaymentModule
         $psePaymentOption = new PrestaShop\PrestaShop\Core\Payment\PaymentOption();
         $psePaymentOption->setForm($infoTemplate)
             ->setCallToActionText($this->l('PSE') . ' ' . $this->pseCheckout->getDiscountBanner())
-            ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png');
+            ->setLogo(_MODULE_DIR_ . 'mercadopago/views/img/mpinfo_checkout.png')
+            ->setModuleName('mercadopago');
 
         return $psePaymentOption;
     }
